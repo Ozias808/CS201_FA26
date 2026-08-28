@@ -108,6 +108,8 @@ barplot(scores, names.arg = students)
 
 ```{r}
 
+ggplot(data = grades_df, aes(x = student, y = score)) # just the foundation
+
 ```
 
 ## Extra Credit (1pt)
