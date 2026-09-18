@@ -324,7 +324,9 @@ Looks like there are other factors that could affect `price` – not just `cut`.
 #| label: scatter plot of carat x price
 
 # try making the points transparent to 0.05
-
+ggplot(data = diamonds, aes(x = carat, y = price)) +
+  geom_point(alpha = 0.05)
+  
 
 ```
 
@@ -353,7 +355,7 @@ ggplot(diamonds, aes(x = carat, y = price)) +
   geom_boxplot(aes(group = cut_width(carat, 1))) # note cut_width() 
 
 ggplot(diamonds, aes(x = carat, y = price)) +
-  geom_boxplot(aes(group = cut_width(carat, 0.5)))
+  geom_boxplot(aes(group = cut_width(carat, 0.5))) # this is how you split the graph into seperate parts.
 
 ggplot(diamonds, aes(x = carat, y = price)) +
   geom_boxplot(aes(group = cut_width(carat, 0.1)))
@@ -394,6 +396,8 @@ ggplot(data = diamonds, aes(x = clarity, y = price)) +
   geom_boxplot()
 
 # clarity x carat
+ggplot(data = diamonds, aes(x = clarity, y = carat)) +
+  geom_boxplot()
 
 ```
 
@@ -407,16 +411,20 @@ Let's not forget about `cut`! Is there a relationship between `cut` and `carat`?
 #| label: explore cut
 
 # box plot of cut x price
-
+ggplot(data = diamonds, aes(x = cut, y = price)) +
+  geom_boxplot()
 
 # box plot of cut x carat
-
+ggplot(data = diamonds, aes(x = cut, y = carat)) +
+  geom_boxplot()
 
 # count plot
-
+ggplot(data = diamonds, aes(x = cut, y = carat)) +
+  geom_count()
 
 # violin plot
-
+ggplot(data = diamonds, aes(x = clarity, y = carat)) +
+  geom_violin()
 
 ```
 
@@ -438,7 +446,7 @@ Between `color`, `clarity`, and `carat`, which do you think is the best predicto
 
 #### Conclusions:
 
-The variable with the most influence on price is \_\_\_.
+The variable with the most influence on price is \_\_carat\_.
 
 ### Reflection
 
