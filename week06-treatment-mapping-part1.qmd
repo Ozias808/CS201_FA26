@@ -191,8 +191,8 @@ teds_d <- teds_d %>%
                           "3" = "Rehab/residential, hospital (non-detox)",
                           "4" = "Rehab/residential, short term (30 days or fewer)",
                           "5" = "Rehab/residential, long term (more than 30 days)",
-                          "6" = "Ambulatory, intensive outpatient ",
-                          "7" = "Ambulatory, non-intensive outpatient ",
+                          "6" = "Ambulatory, intensive outpatient",
+                          "7" = "Ambulatory, non-intensive outpatient",
                           "8" = "Ambulatory, detoxification",
                           
                           .missing = "unknown"),
@@ -210,12 +210,12 @@ Apply the relevant recoding for the Reason for Discharge variable.
 #| label: variable-recoding-reason
 teds_d <- teds_d %>%
   mutate(reason = recode(as.character(reason),
-                             "1" = "Treatment completed ",
+                             "1" = "Treatment completed",
                              "2" = "Dropped out of treatment",
-                             "3" = "Terminated by facility ",
+                             "3" = "Terminated by facility",
                              "4" = "Transferred to another treatment program or facility",
-                             "5" = "Incarcerated ",
-                             "6" = "Death ",
+                             "5" = "Incarcerated",
+                             "6" = "Death",
                              "7" = "Other",
                              
                              .missing = "unknown"),
